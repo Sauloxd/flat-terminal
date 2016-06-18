@@ -1,0 +1,19 @@
+main.ng-enter {
+ /* transition on enter for .5s */
+ transition: .5s;
+
+ /* start with opacity 0 (invisible) */
+ opacity: 0;
+}
+
+   /* end 'enter' transition */
+main.ng-enter-active {
+ /* end with opacity 1 (fade in) */
+ opacity: 1;
+}
+
+main.ng-leave {
+  /* transition on enter and leave for .5s */
+  transition: .5s;
+  opacity: 0;
+}

@@ -1,6 +1,6 @@
 angular
   .module('app')
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
   //
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/terminal");
@@ -9,7 +9,18 @@ angular
   $stateProvider
     .state('terminal', {
       url: "/terminal",
-      templateUrl: "pages/terminal/terminal.html"
+      templateUrl: "pages/terminal/terminal.html",
+      resolve: {
+        loadPlugin: function ($ocLazyLoad) {
+            return $ocLazyLoad.load([
+                {
+                    serie: true,
+                    name: 'testscript',
+                    files: ['pages/terminal/myscript.js']
+                }
+            ]);
+        }
+    }
     });
 
 });
