@@ -2,13 +2,20 @@ var terminalCtrl = function ($state) {
   var vm = this;
 
   $(function(){
-      $(".terminal-title").typed({
+      $('.terminal-title').typed({
         strings: [
-          "$ Operational Systems",
-          "Process scheduling"
+          '$ Operational Systems',
+          'Process scheduling',
+          [
+            'Adriano Valente',
+            'Cesar Faustino',
+            'Pedro Strabelli',
+            'Saulo Furuta'
+          ].join('<br>')
         ],
         typeSpeed: 0,
-        backKeyCode: 32
+        backKeyCode: 32,
+        contentType: 'html'
       });
   });
 
