@@ -10,13 +10,15 @@ angular
     .state('terminal', {
       url: "/terminal",
       templateUrl: "pages/terminal/terminal.html",
+      controller: terminalCtrl,
+      controllerAs: 'termVm',
       resolve: {
         loadPlugin: function ($ocLazyLoad) {
             return $ocLazyLoad.load([
                 {
                     serie: true,
                     name: 'testscript',
-                    files: ['pages/terminal/myscript.js']
+                    files: ['plugins/typed.js']
                 }
             ]);
         }
