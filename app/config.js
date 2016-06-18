@@ -22,7 +22,14 @@ angular
                 }
             ]);
         }
-    }
-    });
+      }
+    })
+    .state('images', {
+      url: "/images",
+      templateUrl: "pages/images/images.html",
+      controller: imgCtrl,
+      controllerAs: 'imgVm'
+    })
+    ;
 
 });

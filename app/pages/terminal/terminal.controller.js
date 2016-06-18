@@ -1,4 +1,4 @@
-var terminalCtrl = function () {
+var terminalCtrl = function ($state) {
   var vm = this;
 
   $(function(){
@@ -11,6 +11,14 @@ var terminalCtrl = function () {
         backKeyCode: 32
       });
   });
+
+  $(document)
+    .off('keydown')
+    .on('keydown', function(e) {
+      if(e.keyCode === 39) {
+        $state.transitionTo('images');
+      }
+    })
 }
 
 angular
