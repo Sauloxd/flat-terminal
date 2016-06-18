@@ -1,18 +1,9 @@
-var terminalCtrl = function ($state) {
+var terminalCtrl = function ($state, stringBankService, $stateParams) {
   var vm = this;
 
   $(function(){
-      $('.terminal-title').typed({
-        strings: [
-          '$ Operational Systems',
-          'Process scheduling',
-          [
-            'Adriano Valente',
-            'Cesar Faustino',
-            'Pedro Strabelli',
-            'Saulo Furuta'
-          ].join('<br>')
-        ],
+      $(".terminal-title").typed({
+        strings: stringBankService.getStrings($stateParams.slide) ,
         typeSpeed: 0,
         backKeyCode: 32,
         contentType: 'html'

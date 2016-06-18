@@ -3,12 +3,12 @@ angular
   .config(function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
   //
   // For any unmatched url, redirect to /state1
-  $urlRouterProvider.otherwise("/terminal");
+  $urlRouterProvider.otherwise("/terminal/1");
   //
   // Now set up the states
   $stateProvider
     .state('terminal', {
-      url: "/terminal",
+      url: "/terminal/:slide",
       templateUrl: "pages/terminal/terminal.html",
       controller: terminalCtrl,
       controllerAs: 'termVm',
