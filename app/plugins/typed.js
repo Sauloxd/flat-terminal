@@ -57,6 +57,9 @@
         // amount of time to wait before backspacing
         this.backDelay = this.options.backDelay;
 
+        // if set, backspacing will only begin when this key is pressed
+        this.backKeyCode = this.options.backKeyCode;
+
         // div containing strings
         this.stringsElement = this.options.stringsElement;
 
@@ -210,10 +213,20 @@
                             if (self.loop === false || self.curLoop === self.loopCount)
                                 return;
                         }
-
-                        self.timeout = setTimeout(function() {
+                        
+                        if(!!self.backKeyCode) {
+                          $(document)
+                            .off('keyup')
+                            .on('keyup', function(e) {
+                              if(e.keyCode === self.backKeyCode) {
+                                self.backspace(curString, curStrPos);
+                              }
+                            })
+                        } else {
+                          self.timeout = setTimeout(function() {
                             self.backspace(curString, curStrPos);
-                        }, self.backDelay);
+                          }, self.backDelay);
+                        }
                     } else {
 
                         /* call before functions if applicable */

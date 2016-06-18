@@ -8,7 +8,7 @@ var terminalCtrl = function () {
           "Process scheduling"
         ],
         typeSpeed: 0,
-        backDelay: 2000
+        backKeyCode: 32
       });
   });
 }
