@@ -16,27 +16,82 @@
 </head>
 <body>
 
-
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
 <div class="computer centralize">
   <div class="computerscreen--container">
     <div class="compterscreen-webcam">
-      
+
     </div>
     <div class="computerscreen--area centralize">
-
+      <div ng-view></div>
     </div>
   </div>
   <div class="computerbase--container">
     <div class="computerbase--grip">
 
     </div>
+    <div class="terminal-area">
   </div>
 </div>
 
-  <div ng-view></div>
+
+  <style>
+
+    .terminal-container {
+      width: 800px;
+      height: 400px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .terminal-area {
+      background-color: #333;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .options > li {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+
+    .options-close {
+      background: #B54A33;
+    }
+
+    .options-minimize {
+      background: #EEC330;
+    }
+
+    .options-maximize {
+      background: #51A65D;
+    }
+
+    .options {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 0;
+      padding-left: 15px;
+    }
+
+    .menu-bar {
+      background: #d8d8d8;
+      margin-top: 0px;
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+      position: relative;
+      height: 30px;
+    }
+
+
+  </style>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
