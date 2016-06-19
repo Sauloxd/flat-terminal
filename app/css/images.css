@@ -1,7 +1,7 @@
 .img--container {
   width: 1000px;
   height: 500px;
-  background-image: url('../assets/images/final-result.png');
+  /*background-image: url('../assets/images/final-result.png');*/
   background-size: cover;
   position: absolute;
   top: 50%;

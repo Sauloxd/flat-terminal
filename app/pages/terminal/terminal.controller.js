@@ -8,7 +8,7 @@ var terminalCtrl = function ($state, stringBankService, slidesService, $statePar
       $(".terminal-title").typed({
         strings: stringBankService.getStrings(CURRENT_SLIDE) ,
         typeSpeed: 0,
-        backKeyCode: 32,
+        backKeyCode: 32, // space keyCode
         contentType: 'html'
       });
   });
@@ -16,8 +16,10 @@ var terminalCtrl = function ($state, stringBankService, slidesService, $statePar
   $(document)
     .off('keydown')
     .on('keydown', function(e) {
-      if(e.keyCode === 39) {
-        $state.transitionTo(NEXT_SLIDE.controller, NEXT_SLIDE.params);
+      if(e.keyCode === 37) {
+        $state.transitionTo(PREVIOUS_SLIDE.controller, PREVIOUS_SLIDE.params)
+      } else if(e.keyCode === 39) {
+        $state.transitionTo(NEXT_SLIDE.controller, NEXT_SLIDE.params)
       }
     })
 }

@@ -11,10 +11,17 @@ var stringBankService = function () {
     ].join('<br>')
   ];
 
+  var string_3 = [
+    'Bye!\\n'
+  ]
+
   this.getStrings = function(slide) {
     switch(slide) {
       case '1':
         return string_1;
+        break;
+      case '3':
+        return string_3;
         break;
       default:
         break;
@@ -26,7 +33,7 @@ var imagesBankService = function() {
 
   const IMAGE_NOT_FOUND = ''; // TODO: Find a nice 404 image ;)
   const IMAGES = {
-    2: 'assets/img/beer-robin.png'
+    2: '../assets/img/robin-beer.jpg'
   };
 
   this.getImage = function(slide) {
