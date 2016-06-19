@@ -25,7 +25,7 @@ angular
       }
     })
     .state('images', {
-      url: "/images",
+      url: "/images/:slide",
       templateUrl: "pages/images/images.html",
       controller: imgCtrl,
       controllerAs: 'imgVm'
