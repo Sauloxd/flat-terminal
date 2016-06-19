@@ -73,6 +73,17 @@
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%; /* used to display blocks of code!
+               TODO: create a new view exclusively to this useCase */
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.terminal-code {
+  text-align: left !important;
+  white-space: pre;
+  width: 100%;
+  padding-left: 60px; padding-right: 60px;
 }
 
 /** blinking cursor */
