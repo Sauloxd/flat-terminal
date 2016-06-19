@@ -1,31 +1,23 @@
 var stringBankService = function () {
-  var string_1 =
-  [
-    '$ Operational Systems',
-    'Process scheduling',
-    [
-      'Adriano Valente',
-      'Cesar Faustino',
-      'Pedro Strabelli',
-      'Saulo Furuta'
-    ].join('<br>')
-  ];
 
-  var string_3 = [
-    'Bye!\\n'
-  ]
+  const STRINGS = {
+    1: [
+      '$ Operational Systems',
+      'Process scheduling',
+      [
+        'Adriano Valente',
+        'Cesar Faustino',
+        'Pedro Strabelli',
+        'Saulo Furuta'
+      ].join('<br>')
+    ],
+
+    3: ['Bye!\\n']
+
+  }
 
   this.getStrings = function(slide) {
-    switch(slide) {
-      case '1':
-        return string_1;
-        break;
-      case '3':
-        return string_3;
-        break;
-      default:
-        break;
-    }
+    return STRINGS[slide] || ['404', 'Ups! I didn\'t find this slide']
   }
 }
 
