@@ -136,13 +136,6 @@ var slidesService = function() {
 
 angular
   .module('app')
-  .service('slidesService', slidesService);
-
-
-angular
-  .module('app')
-  .service('stringBankService', stringBankService);
-
-angular
-  .module('app')
+  .service('slidesService', slidesService)
+  .service('stringBankService', stringBankService)
   .service('imagesBankService', imagesBankService);
