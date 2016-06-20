@@ -4,10 +4,7 @@ var imgCtrl = function ($state, slidesService, imagesBankService, $stateParams) 
   const NEXT_SLIDE = slidesService.getNextSlide(CURRENT_SLIDE);
   const PREVIOUS_SLIDE = slidesService.getPreviousSlide(CURRENT_SLIDE);
 
-  $('.img--container').css(
-    'background-image',
-    ['url(', ')'].join(imagesBankService.getImage(CURRENT_SLIDE))
-  );
+  this.bkgImg = imagesBankService.getImage(CURRENT_SLIDE);
 
   $(document)
     .off('keydown')
