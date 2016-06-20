@@ -2,11 +2,11 @@ var stringBankService = function () {
 
   const STRINGS = {
     1: [
-      '$ Operational Systems',
+      '$ Operating Systems',
       [
         'Adriano Valente',
         'Cesar Faustino',
-        'Pedro Strabelli',
+        'Pedro Strabeli',
         'Saulo Furuta'
       ].join('<br>'),
       [
@@ -48,7 +48,7 @@ var stringBankService = function () {
 
   4: [
     ['<div class="terminal-code">', '</div>'].join([
-      '#define YIELD_PROCESS 159 // system call number',
+      '#define YIELD_PROCESS 158 // system call number',
       'if(fork()) { ',
       '  while(1) {',
       '    printf("Child process here! I\'ll get out soon");',
