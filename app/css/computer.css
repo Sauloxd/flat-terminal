@@ -1,5 +1,10 @@
+html {
+height: 100%}
+
 body {
+  margin: 0;
   background-color: #EC4A2C;
+  height: 100%;
 }
 .centralize {
   position: absolute;
@@ -55,4 +60,29 @@ body {
   display: inline-block;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
+}
+
+.block-view {
+  width: 34.5px;
+  height: 100%;
+  background-color: #EC4A2C;
+}
+
+.block-view-computerscreen {
+  width: 34.5px;
+  height: 100%;
+  background-color: #32485F;
+}
+
+
+.left {
+  position: absolute;
+  left: 0;
+  z-index: 1000000000;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  z-index: 1000000000;
 }
