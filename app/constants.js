@@ -90,8 +90,40 @@ angular
     ],
     10: [
       ['<div class="terminal-code">', '</div>'].join([
+        'SYSCALL_DEFINE0\(sched_yield\)',
+        '\{',
+        'struct rq *rq = this_rq_lock();',
+        'current->sched_class->yield_task(rq);',
+        '__release(rq->lock);',
+        'schedule();',
+        'return 0;',
+        '}',
+      ].join('<br>'))
+    ],
+    11: [
+      ['<div class="terminal-code" id="here " >', '</div>'].join([
+        'SYSCALL_DEFINE2(sched_rr_get_interval, pid_t, pid,',
+        '    struct timespec __user *, interval)',
+        '{',
+        '  rcu_read_lock();',
+        ' p = find_process_by_pid(pid);',
+        ' rq = task_rq_lock(p, &flags);',
+        ' time_slice = p->sched_class->',
+        'get_rr_interval(rq, p);',
+        ' task_rq_unlock(rq, &flags);',
+        ' rcu_read_unlock();',
+        ' jiffies_to_timespec(time_slice, &t);',
+        ' retval = ',
+        'copy_to_user(interval, &t, sizeof(t)) ?'
+        ,' -EFAULT : 0;',
+        '}',
+      ].join('<br>'))
+    ],
+
+    12: [
+      ['<div class="terminal-code">', '</div>'].join([
         'That\'s all folks!!',
-        'Hope you guys enjoyed this Round-Robin madness!',
+        'Hope you guys enjoyed this Presentation!',
         '',
         'Thank you!'
       ].join('<br>'))
@@ -118,6 +150,8 @@ angular
     { controller: 'terminal', params: { slide: 8 } },
     { controller: 'terminal', params: { slide: 9 } },
     { controller: 'terminal', params: { slide: 10 } },
+    { controller: 'terminal', params: { slide: 11 } },
+    { controller: 'terminal', params: { slide: 12 } },
   ])
 
   ;
