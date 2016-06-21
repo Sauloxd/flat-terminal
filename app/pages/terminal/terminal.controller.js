@@ -1,11 +1,14 @@
-var terminalCtrl = function ($state, stringBankService, $stateParams) {
+var terminalCtrl = function ($state, stringBankService, slidesService, $stateParams) {
   var vm = this;
+  const CURRENT_SLIDE = $stateParams.slide;
+  const NEXT_SLIDE = slidesService.getNextSlide(CURRENT_SLIDE);
+  const PREVIOUS_SLIDE = slidesService.getPreviousSlide(CURRENT_SLIDE);
 
   $(function(){
       $(".terminal-title").typed({
-        strings: stringBankService.getStrings($stateParams.slide) ,
+        strings: stringBankService.getStrings(CURRENT_SLIDE) ,
         typeSpeed: 0,
-        backKeyCode: 32,
+        backKeyCode: 32, // space keyCode
         contentType: 'html'
       });
   });
@@ -13,8 +16,10 @@ var terminalCtrl = function ($state, stringBankService, $stateParams) {
   $(document)
     .off('keydown')
     .on('keydown', function(e) {
-      if(e.keyCode === 39) {
-        $state.transitionTo('images');
+      if(e.keyCode === 37) {
+        $state.transitionTo(PREVIOUS_SLIDE.controller, PREVIOUS_SLIDE.params)
+      } else if(e.keyCode === 39) {
+        $state.transitionTo(NEXT_SLIDE.controller, NEXT_SLIDE.params)
       }
     })
 }
