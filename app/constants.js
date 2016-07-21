@@ -2,7 +2,7 @@ angular
   .module('app')
   .constant("STRINGS", {
       1: [
-        '$ Operating Systems',
+        '$ Operating Systems\\n',
         [
           'Adriano Valente',
           'Cesar Faustino',
@@ -121,12 +121,10 @@ angular
     ],
 
     12: [
-      ['<div class="terminal-code">', '</div>'].join([
-        'That\'s all folks!!',
-        'Hope you guys enjoyed this Presentation!',
-        '',
-        'Thank you!'
-      ].join('<br>'))
+      [
+        'ThatÃ³s all folks!',
+        'Bye\\n'
+      ].join('<br>')
     ],
     })
 
